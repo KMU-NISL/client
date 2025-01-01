@@ -12,6 +12,11 @@
 
 html{
   font-family: 'Pretendard-Regular', serif;
+  overflow-x : hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a {

@@ -1,34 +1,94 @@
-import React from "react";
+import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 const Header: React.FC = () => {
+    const [isVisibleSlider, setIsVisibleSlider] = useState(false);
+
+
+    const navigate = useNavigate();
+
+    const handleNavigate = (url: string) => {
+        navigate(`/${url}`)
+    }
+
+    const handleSlider = () => {
+        setIsVisibleSlider(!isVisibleSlider);
+    }
+
+
     return (
         <>
-            <header className='absolute bg-white w-full h-[8%] shadow-2xl flex items-center'>
-                <div className='absolute left-1/2 transform -translate-x-1/2'>
-                    <div className='text-2xl'>NISL</div>
-                </div>
-
-                <div className='absolute left-4 hidden xl:inline'>
-                    <div className='flex justify-between'>
-                        <div className='text-slate-700 text-xl m-2 cursor-pointer'>Introduce</div>
-                        <div className='text-slate-700 text-xl m-2 cursor-pointer'>Members</div>
-                        <div className='text-slate-700 text-xl m-2 cursor-pointer'>Research</div>
-                        <div className='text-slate-700 text-xl m-2 cursor-pointer'>Publication</div>
-                        <div className='text-slate-700 text-xl m-2 cursor-pointer'>Recruitment</div>
+            <header className='absolute top-0 w-full max-w-full h-[8%] flex items-center'>
+                <div className='transition-all transform flex justify-between items-center max-w-full w-full'>
+                    <div onClick={() => handleNavigate('')}
+                        className='text-3xl text-white font-bold ml-10 m-2 cursor-pointer'>NISL
+                        <div className='text-xs text-slate-400'>Next-Generation Information Security Lab</div>
                     </div>
-                </div>
-
-                <div className='absolute left-4 xl:hidden'>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" className='cursor-pointer m-2'
+                    <div className='lg:flex justify-between hidden gap-4'>
+                        <div onClick={() => handleNavigate('introduce')}
+                             className='text-white text-lg m-2 cursor-pointer transition-all underline-offset-4  hover:underline duration-500 hover:text-red-600 hover:border-red-600'>Introduce
+                        </div>
+                        <div onClick={() => handleNavigate('members')}
+                             className='text-white text-lg m-2 cursor-pointer transition-all underline-offset-4  hover:underline duration-500 hover:text-red-600 hover:border-red-600'>Members
+                        </div>
+                        <div onClick={() => handleNavigate('research')}
+                             className='text-white text-lg m-2 cursor-pointer transition-all underline-offset-4  hover:underline duration-500 hover:text-red-600 hover:border-red-600'>Research
+                        </div>
+                        <div onClick={() => handleNavigate('publication')}
+                             className='text-white text-lg m-2 cursor-pointer transition-all underline-offset-4  hover:underline duration-500 hover:text-red-600 hover:border-red-600'>Publication
+                        </div>
+                        <div onClick={() => handleNavigate('recruitment')}
+                             className='text-white text-lg m-2 cursor-pointer transition-all underline-offset-4  hover:underline duration-500 hover:text-red-600 hover:border-red-600'>Recruitment
+                        </div>
+                    </div>
+                    <div className='justify-self-end m-10'>
+                        <svg xmlns="http://www.w3.org/2000/svg" onClick={() => handleSlider()}
+                             height="20" width="17.5" className='cursor-pointer'
                              viewBox="0 0 448 512">
-                            <path fill="#000000"
+                            <path fill="#ffffff"
                                   d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
                         </svg>
                     </div>
                 </div>
 
+
             </header>
+            <div
+                className={`top-0 absolute min-w-60 w-1/6 h-full transition-all duration-1000 transform bg-white ${isVisibleSlider ? 'opacity-100 left-0' : 'opacity-0 -left-1/2'}`}>
+
+                <div className='text-2xl text-black m-2'>NISL
+                    <div className='text-sm text-slate-400'>
+                        Next-Generation Information Security Lab
+                    </div>
+                </div>
+
+
+                <div
+                    className={`flex flex-col justify-center items-start mt-5 ${isVisibleSlider ? 'opacity-100' : 'opacity-0 hidden'}`}>
+
+                    <div onClick={() => handleNavigate('introduce')}
+                         className='text-black text-xl m-2 cursor-pointer transition-all duration-500 hover:text-green-500'>Introduce
+                    </div>
+                    <div className='w-10/12 h-[0.1rem] bg-slate-400 opacity-60 mb-4'></div>
+                    <div onClick={() => handleNavigate('members')}
+                         className='text-black text-xl m-2 cursor-pointer transition-all duration-500 hover:text-green-500'>Members
+                    </div>
+                    <div className='w-10/12 h-[0.1rem] bg-slate-400 opacity-60 mb-4'></div>
+                    <div onClick={() => handleNavigate('research')}
+                         className='text-black text-xl m-2 cursor-pointer transition-all duration-500 hover:text-green-500'>Research
+                    </div>
+                    <div className='w-10/12 h-[0.1rem] bg-slate-400 opacity-60 mb-4'></div>
+                    <div onClick={() => handleNavigate('publication')}
+                         className='text-black text-xl m-2 cursor-pointer transition-all duration-500 hover:text-green-500'>Publication
+                    </div>
+                    <div className='w-10/12 h-[0.1rem] bg-slate-400 opacity-60 mb-4'></div>
+                    <div onClick={() => handleNavigate('recruitment')}
+                         className='text-black text-xl m-2 cursor-pointer transition-all duration-500 hover:text-green-500'>Recruitment
+                    </div>
+                    <div className='w-10/12 h-[0.1rem] bg-slate-400 opacity-60 mb-4'></div>
+                </div>
+
+            </div>
         </>
     )
 }
