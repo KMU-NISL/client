@@ -26,7 +26,7 @@ const Header: React.FC = () => {
     }
 
     function applicableYToggleHeaderBackground(y: number) {
-        if (window.innerHeight * (1/2) < y) {
+        if (window.innerHeight * (1 / 2) < y) {
             setIsHeaderBackgroundVisible(true);
         } else {
             setIsHeaderBackgroundVisible(false);
@@ -45,7 +45,8 @@ const Header: React.FC = () => {
 
     return (
         <>
-            <header className={`fixed top-0 w-full max-w-full h-[8%] flex items-center duration-1000 transition-all ${isHeaderBackgroundVisible ? 'bg-black opacity-70' : ''}`}>
+            <header
+                className={`fixed top-0 w-full max-w-full h-[8%] flex items-center duration-1000 transition-all ${isHeaderBackgroundVisible ? 'bg-black opacity-70' : ''} z-10`}>
                 <div className='transition-all transform flex justify-between items-center max-w-full w-full'>
                     <div onClick={() => handleNavigate('')}
                          className='text-3xl text-white font-bold ml-10 m-2 cursor-pointer transition-all duration-500 hover:text-red-600'>NISL
@@ -81,7 +82,7 @@ const Header: React.FC = () => {
 
             </header>
             <div
-                className={`top-0 absolute min-w-60 w-1/6 h-full transition-all duration-1000 transform bg-white ${isVisibleSlider ? 'opacity-100 left-0' : 'opacity-0 -left-1/2'}`}>
+                className={`fixed top-0 min-w-72 shadow-2xl rounded-r-3xl w-1/6 h-full transition-all duration-1000 transform bg-white ${isVisibleSlider ? 'opacity-100 left-0' : 'opacity-0 -left-1/2'} z-20`}>
 
                 <div className='text-2xl text-black m-2'>NISL
                     <div className='text-sm text-slate-400'>
