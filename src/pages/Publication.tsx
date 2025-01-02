@@ -1,12 +1,14 @@
 import TopBackground from "../components/TopBackground.tsx";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import ScrollingInduction from "../components/ScrollingInduction.tsx";
+import PageTitle from "../components/PageTitle.tsx";
 
 
 const Publication: React.FC = () => {
     const [isTitleVisible, setIsTitleVisible] = useState(false);
-    const url : string = 'publication-background.jpg';
-    const contentTitle : string = 'International Journal index in SCIE';
+    const url: string = 'publication-background.jpg';
+    const title: string = 'Publication';
+    const contentTitle: string = 'International Journal index in SCIE';
     const papers = [
         {
             "name": "Blockchain-Assisted Secure and Lightweight Authentication Scheme for Multi-Server Internet of Drones Environments",
@@ -200,13 +202,9 @@ const Publication: React.FC = () => {
 
     return (
         <>
-            <TopBackground url={url} />
-
-            <div className={`w-full h-4/5 flex flex-col items-center justify-center transition-all duration-[700ms] ${isTitleVisible ? 'opacity-100' : 'opacity-0 translate-y-5'}`}>
-                <div className='text-white m-10 text-6xl font-bold'>Publication</div>
-            </div>
-
-            <ScrollingInduction />
+            <TopBackground url={url}/>
+            <PageTitle title={title} isTitleVisible={isTitleVisible}/>
+            <ScrollingInduction/>
 
             <div className='flex flex-col items-center justify-center mb-20 mt-0'>
                 <div className='text-4xl font-bold text-black mb-10'>
@@ -214,15 +212,15 @@ const Publication: React.FC = () => {
                 </div>
 
                 <ol className='list-decimal'>
-                {
-                    papers.map((paper) => {
-                        return (
-                            <li className='text-base'>
-                                {paper.name}, {paper.journal}, {paper.year}
-                            </li>
-                        )
-                    })
-                }
+                    {
+                        papers.map((paper) => {
+                            return (
+                                <li className='text-base'>
+                                    {paper.name}, {paper.journal}, {paper.year}
+                                </li>
+                            )
+                        })
+                    }
                 </ol>
             </div>
         </>

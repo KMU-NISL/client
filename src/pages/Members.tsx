@@ -1,11 +1,13 @@
 import TopBackground from "../components/TopBackground.tsx";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import ScrollingInduction from "../components/ScrollingInduction.tsx";
+import PageTitle from "../components/PageTitle.tsx";
 
 
 const Members: React.FC = () => {
-    const url: string = 'members-background.jpg';
     const [isTitleVisible, setIsTitleVisible] = useState(false);
+    const url: string = 'members-background.jpg';
+    const title: string = 'Members';
 
     const members = {
         members: [{
@@ -109,13 +111,8 @@ const Members: React.FC = () => {
     return (
         <>
             <TopBackground url={url}/>
-
-            <div
-                className={`w-full h-4/5 flex flex-col items-center justify-center transition-all duration-[700ms] ${isTitleVisible ? 'opacity-100' : 'opacity-0 translate-y-5'}`}>
-                <div className='text-white m-10 text-6xl font-bold'>Members</div>
-            </div>
-
-            <ScrollingInduction />
+            <PageTitle title={title} isTitleVisible={isTitleVisible}/>
+            <ScrollingInduction/>
 
             <div className='flex flex-col items-center justify-center mb-20 mt-0'>
 
@@ -130,7 +127,8 @@ const Members: React.FC = () => {
                                     member.members.map((member) => {
                                         return (
                                             <>
-                                                <div className='box transition-all duration-1000 shadow-2xl rounded-2xl w-1/2 p-16 mb-20'>
+                                                <div
+                                                    className='box transition-all duration-1000 shadow-2xl rounded-2xl w-1/2 p-16 mb-20'>
                                                     <div className='flex flex-col items-start justify-start text-black'>
                                                         <div className='font-bold text-5xl mb-10'>
                                                             {member.name}

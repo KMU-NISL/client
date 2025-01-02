@@ -1,11 +1,13 @@
 import TopBackground from "../components/TopBackground.tsx";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import ScrollingInduction from "../components/ScrollingInduction.tsx";
+import PageTitle from "../components/PageTitle.tsx";
 
 
 const Introduce: React.FC = () => {
-    const url: string = 'introduce-background.jpg';
     const [isTitleVisible, setIsTitleVisible] = useState(false);
+    const url: string = 'introduce-background.jpg';
+    const title: string = 'Introduction Lab';
 
     useEffect(() => {
         setTimeout(() => {
@@ -18,10 +20,7 @@ const Introduce: React.FC = () => {
     return (
         <>
             <TopBackground url={url} />
-            <div className={`w-full h-4/5 flex flex-col items-center justify-center transition-all duration-[700ms] ${isTitleVisible ? 'opacity-100' : 'opacity-0 translate-y-5'}`}>
-                <div className='text-white m-10 text-6xl font-bold'>Introduction Lab</div>
-            </div>
-
+            <PageTitle title={title} isTitleVisible={isTitleVisible} />
             <ScrollingInduction />
 
             <div className='w-full flex flex-col justify-center items-center'>

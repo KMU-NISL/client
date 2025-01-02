@@ -1,10 +1,12 @@
 import TopBackground from "../components/TopBackground.tsx";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import ScrollingInduction from "../components/ScrollingInduction.tsx";
+import PageTitle from "../components/PageTitle.tsx";
 
 const Recruitment: React.FC = () => {
-    const url: string = 'recruitment-background.jpg';
     const [isTitleVisible, setIsTitleVisible] = useState(false);
+    const url: string = 'recruitment-background.jpg';
+    const title: string = 'Recruitment';
 
     useEffect(() => {
         setTimeout(() => {
@@ -17,13 +19,8 @@ const Recruitment: React.FC = () => {
     return (
         <>
             <TopBackground url={url}/>
-
-            <div
-                className={`w-full h-4/5 flex flex-col items-center justify-center transition-all duration-[700ms] ${isTitleVisible ? 'opacity-100' : 'opacity-0 translate-y-5'}`}>
-                <div className='text-white m-10 text-6xl font-bold'>Recruitment</div>
-            </div>
-
-            <ScrollingInduction />
+            <PageTitle title={title} isTitleVisible={isTitleVisible}/>
+            <ScrollingInduction/>
 
             <div className='flex flex-col items-center justify-center mb-20'>
                 <div className={'text-black text-2xl font-bold'}>

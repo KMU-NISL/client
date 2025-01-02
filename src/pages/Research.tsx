@@ -1,10 +1,12 @@
 import TopBackground from "../components/TopBackground.tsx";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import ScrollingInduction from "../components/ScrollingInduction.tsx";
+import PageTitle from "../components/PageTitle.tsx";
 
 const Research: React.FC = () => {
     const url: string = 'research-background.jpg';
     const [isTitleVisible, setIsTitleVisible] = useState(false);
+    const title = 'Research'
     const content: string = 'Next-Generation Information Security Lab (NISL) studies security of communication and networks,\n' +
         '                        blockchain technology, post-quantum cryptography, vehicle ad-hoc networks, e-commerce and so on.\n' +
         '                        There cryptographic researches guarantee confidentiality, integrity, availability of\n' +
@@ -77,12 +79,7 @@ const Research: React.FC = () => {
     return (
         <>
             <TopBackground url={url}/>
-
-            <div
-                className={`w-full h-4/5 flex flex-col items-center justify-center transition-all duration-[700ms] ${isTitleVisible ? 'opacity-100' : 'opacity-0 translate-y-5'}`}>
-                <div className='text-white m-10 text-6xl font-bold'>Research</div>
-            </div>
-
+            <PageTitle title={title} isTitleVisible={isTitleVisible} />
             <ScrollingInduction />
 
 
