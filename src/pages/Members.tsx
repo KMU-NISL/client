@@ -2,74 +2,24 @@ import TopBackground from "../components/TopBackground.tsx";
 import React, {useEffect, useState} from "react";
 import ScrollingInduction from "../components/ScrollingInduction.tsx";
 import PageTitle from "../components/PageTitle.tsx";
+import membersData from "../assets/members.json";
 
+interface Group {
+    name: string,
+    members: Member[]
+}
+
+interface Member {
+    name: string,
+    affiliation: string,
+    email: string
+}
 
 const Members: React.FC = () => {
     const [isTitleVisible, setIsTitleVisible] = useState(false);
+    const [members] = useState<Group[]>(membersData);
     const url: string = 'members-background.jpg';
     const title: string = 'Members';
-
-    const members = {
-        members: [{
-            name: 'Professor',
-            members: [{
-                name: 'Yohan Park',
-                affiliation: 'Department of Computer Engineering, Keimyung University',
-                email: 'yhpark@kmu.ac.kr'
-            }]
-        },
-            {
-                name: 'Master\'s Students',
-                members: [
-                    {
-                        name: 'Sengmin Lee',
-                        affiliation: 'Department of Computer Engineering, Keimyung University',
-                        email: 'lsm@ydonsecurity.com'
-                    },
-                    {
-                        name: 'Hyewon Park',
-                        affiliation: 'Department of Computer Engineering, Keimyung University',
-                        email: 'wldnjsfuf@stu.kmu.ac.kr'
-                    }
-                ]
-            },
-            {
-                name: 'Undergraduate Students',
-                "members": [
-                    {
-                        "name": "Donghyeon Kim",
-                        "affiliation": "Department of Computer Engineering, Keimyung University",
-                        "email": "laders23@naver.com"
-                    },
-                    {
-                        "name": "Hyeonmin Kim",
-                        "affiliation": "Department of Computer Engineering, Keimyung University",
-                        "email": "c3man161@gmail.com"
-                    },
-                    {
-                        "name": "Chaeyun Son",
-                        "affiliation": "Department of Computer Engineering, Keimyung University",
-                        "email": "sonchaeyun0604@gmail.com"
-                    },
-                    {
-                        "name": "Mingyu Oh",
-                        "affiliation": "Department of Computer Engineering, Keimyung University",
-                        "email": "alsrb4719@gmail.com"
-                    },
-                    {
-                        "name": "Changui Lee",
-                        "affiliation": "Department of Computer Engineering, Keimyung University",
-                        "email": "rhljh7410@gmail.com"
-                    },
-                    {
-                        "name": "Sieun Ju",
-                        "affiliation": "Department of Computer Engineering, Keimyung University",
-                        "email": "juse@gmail.com"
-                    }
-                ]
-            }]
-    }
-
 
     useEffect(() => {
         setTimeout(() => {
@@ -115,9 +65,8 @@ const Members: React.FC = () => {
             <ScrollingInduction/>
 
             <div className='flex flex-col items-center justify-center mb-20 mt-0'>
-
                 {
-                    members.members.map((member) => {
+                    members.map((member) => {
                         return (
                             <>
                                 <div className=' font-bold text-black text-3xl mb-10'>

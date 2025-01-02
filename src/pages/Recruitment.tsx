@@ -7,6 +7,8 @@ const Recruitment: React.FC = () => {
     const [isTitleVisible, setIsTitleVisible] = useState(false);
     const url: string = 'recruitment-background.jpg';
     const title: string = 'Recruitment';
+    const content : string = 'Please contact with the following mail'
+    const email : string = 'yhpark@kmu.ac.kr'
 
     useEffect(() => {
         setTimeout(() => {
@@ -14,7 +16,6 @@ const Recruitment: React.FC = () => {
         }, 500);
 
     }, [])
-
 
     return (
         <>
@@ -24,10 +25,10 @@ const Recruitment: React.FC = () => {
 
             <div className='flex flex-col items-center justify-center mb-20'>
                 <div className={'text-black text-2xl font-bold'}>
-                    Please contact with the following mail
+                    {content}
                 </div>
                 <div className={'text-black text-xl font-bold'}>
-                    yhpark@kmu.ac.kr
+                    {email}
                 </div>
             </div>
         </>

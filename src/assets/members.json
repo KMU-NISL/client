@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Professor",
+    "members": [
+      {
+        "name": "Yohan Park",
+        "affiliation": "Department of Computer Engineering, Keimyung University",
+        "email": "yhpark@kmu.ac.kr"
+      }
+    ]
+  },
+  {
+    "name": "Master's Students",
+    "members": [
+      {
+        "name": "Sengmin Lee",
+        "affiliation": "Department of Computer Engineering, Keimyung University",
+        "email": "lsm@ydonsecurity.com"
+      },
+      {
+        "name": "Hyewon Park",
+        "affiliation": "Department of Computer Engineering, Keimyung University",
+        "email": "wldnjsfuf@stu.kmu.ac.kr"
+      }
+    ]
+  },
+  {
+    "name": "Undergraduate Students",
+    "members": [
+      {
+        "name": "Donghyeon Kim",
+        "affiliation": "Department of Computer Engineering, Keimyung University",
+        "email": "laders23@naver.com"
+      },
+      {
+        "name": "Hyeonmin Kim",
+        "affiliation": "Department of Computer Engineering, Keimyung University",
+        "email": "c3man161@gmail.com"
+      },
+      {
+        "name": "Chaeyun Son",
+        "affiliation": "Department of Computer Engineering, Keimyung University",
+        "email": "sonchaeyun0604@gmail.com"
+      },
+      {
+        "name": "Mingyu Oh",
+        "affiliation": "Department of Computer Engineering, Keimyung University",
+        "email": "alsrb4719@gmail.com"
+      },
+      {
+        "name": "Changui Lee",
+        "affiliation": "Department of Computer Engineering, Keimyung University",
+        "email": "rhljh7410@gmail.com"
+      },
+      {
+        "name": "Sieun Ju",
+        "affiliation": "Department of Computer Engineering, Keimyung University",
+        "email": "juse@gmail.com"
+      }
+    ]
+  }
+]
