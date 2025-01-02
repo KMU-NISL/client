@@ -28,7 +28,7 @@ const Introduce: React.FC = () => {
                 </svg>
             </div>
             <div className='w-full flex flex-col justify-center items-center'>
-                <div className='w-2/3  m-20'>
+                <div className='w-2/3  m-16 mt-0'>
                     <div className='text-xl font-bold text-gray-900'>
                         In the 21st century with information and telecommunication more important than ever before, the
                         mobile network field is rapidly developing as the core of the information and telecommunication
