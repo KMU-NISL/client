@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 
 
 const Members: React.FC = () => {
-    const url : string = 'introduce-background.jpg';
+    const url : string = 'members-background.jpg';
     const [isTitleVisible, setIsTitleVisible] = useState(false);
 
     useEffect(() => {

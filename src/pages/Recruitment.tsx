@@ -2,7 +2,7 @@ import TopBackground from "../components/TopBackground.tsx";
 import {useEffect, useState} from "react";
 
 const Recruitment: React.FC = () => {
-    const url : string = 'introduce-background.jpg';
+    const url : string = 'recruitment-background.jpg';
     const [isTitleVisible, setIsTitleVisible] = useState(false);
 
     useEffect(() => {
