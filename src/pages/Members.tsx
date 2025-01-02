@@ -1,5 +1,6 @@
 import TopBackground from "../components/TopBackground.tsx";
 import {useEffect, useState} from "react";
+import ScrollingInduction from "../components/ScrollingInduction.tsx";
 
 
 const Members: React.FC = () => {
@@ -114,13 +115,7 @@ const Members: React.FC = () => {
                 <div className='text-white m-10 text-6xl font-bold'>Members</div>
             </div>
 
-            <div className='w-full h-1/5 flex items-center justify-center animate-bounce'>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-                     stroke="currentColor" className="size-8">
-                    <path strokeLinecap="round" strokeLinejoin="round"
-                          d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"/>
-                </svg>
-            </div>
+            <ScrollingInduction />
 
             <div className='flex flex-col items-center justify-center mb-20 mt-0'>
 
