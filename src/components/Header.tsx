@@ -8,6 +8,7 @@ const Header: React.FC = () => {
     const navigate = useNavigate();
 
     const handleNavigate = (url: string) => {
+        setIsVisibleSlider(false);
         navigate(`/${url}`)
     }
 
@@ -21,7 +22,7 @@ const Header: React.FC = () => {
             <header className='absolute top-0 w-full max-w-full h-[8%] flex items-center'>
                 <div className='transition-all transform flex justify-between items-center max-w-full w-full'>
                     <div onClick={() => handleNavigate('')}
-                        className='text-3xl text-white font-bold ml-10 m-2 cursor-pointer'>NISL
+                         className='text-3xl text-white font-bold ml-10 m-2 cursor-pointer'>NISL
                         <div className='text-xs text-slate-400'>Next-Generation Information Security Lab</div>
                     </div>
                     <div className='lg:flex justify-between hidden gap-4'>
