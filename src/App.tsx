@@ -8,9 +8,12 @@ function App() {
     return (
         <>
             <Router>
-                <Header />
-                <AppRoutes />
-                <Footer />
+                <div className='relative h-screen'>
+
+                    <Header/>
+                    <AppRoutes/>
+                    <Footer/>
+                </div>
             </Router>
         </>
     )
