@@ -66,7 +66,7 @@ const Research: React.FC = () => {
 
             <div className='flex flex-col items-center justify-center'>
                 <div className='w-3/4 mb-20'>
-                    <div className='text-black'>
+                    <div className='text-black text-xs md:text-base'>
                         {researches.content}
                     </div>
                 </div>
@@ -75,11 +75,11 @@ const Research: React.FC = () => {
                     researches.researches.map((research) => {
                         return (
                             <div
-                                className='box transition-all duration-1000 flex flex-col w-1/2 justify-center items-center mb-20 shadow-2xl rounded-2xl p-10'>
-                                <div className='text-black text-xl mb-5 font-bold'>
+                                className='box transition-all duration-1000 flex flex-col w-11/12 md:w-1/2 justify-center items-center mb-20 shadow-2xl rounded-2xl p-10'>
+                                <div className='text-black text-base  md:text-2xl mb-5 font-bold'>
                                     {research.title}
                                 </div>
-                                <div className='text-black mb-5'>
+                                <div className='text-black mb-5 text-xs md:text-base'>
                                     {research.content}
                                 </div>
                                 <div className='flex'>

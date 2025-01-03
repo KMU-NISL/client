@@ -31,17 +31,17 @@ const Publication: React.FC = () => {
             <PageTitle title={title} isTitleVisible={isTitleVisible}/>
             <ScrollingInduction/>
 
-            <div className='flex flex-col items-center justify-center mb-20 mt-0'>
-                <div className='text-4xl font-bold text-black mb-10'>
+            <div className='flex flex-col items-center w-11/12 md:w-full justify-center mb-20 mt-0'>
+                <div className='text-base md:text-4xl font-bold pl-5 text-black mb-10'>
                     {contentTitle}
                 </div>
 
-                <ol className='list-decimal'>
+                <ol>
                     {
-                        papers.map((paper) => {
+                        papers.map((paper, index) => {
                             return (
-                                <li className='text-base'>
-                                    {paper.name}, {paper.journal}, {paper.year}
+                                <li className='text-xs md:text-base mb-5 md:mb-2 pl-5'>
+                                    {index+1}. {paper.name}, {paper.journal}, {paper.year}
                                 </li>
                             )
                         })

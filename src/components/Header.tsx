@@ -46,10 +46,10 @@ const Header: React.FC = () => {
     return (
         <>
             <header
-                className={`fixed top-0 w-full max-w-full h-[8%] flex items-center duration-1000 transition-all ${isHeaderBackgroundVisible ? 'bg-black opacity-70' : ''} z-10`}>
+                className={`fixed top-0 w-full max-w-full h-[15%] md:h-[8%] flex items-center duration-1000 transition-all ${isHeaderBackgroundVisible ? 'bg-black opacity-70' : ''} z-10`}>
                 <div className='transition-all transform flex justify-between items-center max-w-full w-full'>
                     <div onClick={() => handleNavigate('')}
-                         className='text-3xl text-white font-bold ml-10 m-2 cursor-pointer transition-all duration-500 hover:text-red-600'>NISL
+                         className='text-xl sm:text-3xl text-white font-bold ml-10 m-2 cursor-pointer transition-all duration-500 hover:text-red-600'>NISL
                         <div className='text-xs text-slate-400'>Next-Generation Information Security Lab</div>
                     </div>
                     <div className='lg:flex justify-between hidden gap-4'>

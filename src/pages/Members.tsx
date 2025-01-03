@@ -69,7 +69,7 @@ const Members: React.FC = () => {
                     members.map((member) => {
                         return (
                             <>
-                                <div className=' font-bold text-black text-3xl mb-10'>
+                                <div className=' font-bold text-black text-3xl mb-10 text-center'>
                                     {member.name}
                                 </div>
                                 {
@@ -77,15 +77,15 @@ const Members: React.FC = () => {
                                         return (
                                             <>
                                                 <div
-                                                    className='box transition-all duration-1000 shadow-2xl rounded-2xl w-1/2 p-16 mb-20'>
+                                                    className='box transition-all duration-1000 shadow-2xl rounded-2xl w-11/12 md:w-1/2 p-10 md:p-16 mb-20'>
                                                     <div className='flex flex-col items-start justify-start text-black'>
-                                                        <div className='font-bold text-5xl mb-10'>
+                                                        <div className='font-bold text-4xl md:text-5xl mb-10'>
                                                             {member.name}
                                                         </div>
-                                                        <div>
+                                                        <div className='text-sm md:text-base'>
                                                             {member.affiliation}
                                                         </div>
-                                                        <div>
+                                                        <div className='text-sm md:text-base'>
                                                             {member.email}
                                                         </div>
                                                     </div>

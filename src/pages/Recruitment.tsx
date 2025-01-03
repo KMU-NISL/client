@@ -24,10 +24,10 @@ const Recruitment: React.FC = () => {
             <ScrollingInduction/>
 
             <div className='flex flex-col items-center justify-center mb-20'>
-                <div className={'text-black text-2xl font-bold'}>
+                <div className={'text-black text-base md:text-2xl font-bold'}>
                     {content}
                 </div>
-                <div className={'text-black text-xl font-bold'}>
+                <div className={'text-black text-xs md:text-xl font-bold'}>
                     {email}
                 </div>
             </div>

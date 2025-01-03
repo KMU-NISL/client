@@ -24,11 +24,11 @@ const Introduce: React.FC = () => {
             <ScrollingInduction/>
 
             <div className='w-full flex flex-col justify-center items-center'>
-                <div className='w-2/3  m-16 mt-0'>
-                    <div className='text-xl font-bold text-gray-900'>
+                <div className='w-11/12 md:w-2/3 m-16 mt-0'>
+                    <div className='text-sm md:text-xl font-bold text-gray-900'>
                         {content[0]}
                     </div>
-                    <div className='mt-10 text-lg font-bold text-gray-500'>
+                    <div className='mt-10 text-xs md:text-lg font-bold text-gray-500'>
                         {content[1]}
                     </div>
                 </div>
