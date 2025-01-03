@@ -86,7 +86,8 @@ const Research: React.FC = () => {
                                 {
                                     research.images.map((image) => {
                                         return (
-                                            <img src={image} alt={'not found'} className={`w-1/${research.images.length}`}/>
+                                            <img src={image} alt={'not found'}
+                                                 style={{ width: `${100 / research.images.length}%` }} />
                                         )
                                     })
                                 }
